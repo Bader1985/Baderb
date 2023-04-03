@@ -9,12 +9,21 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("введите вашу Имя");
+        final String ANSI_RESET = "\u001B[0m";
+        final String ANSI_BLACK = "\u001B[30m";
+        final String ANSI_RED = "\u001B[31m";
+        final String ANSI_GREEN = "\u001B[32m";
+        final String ANSI_YELLOW = "\u001B[33m";
+        final String ANSI_BLUE = "\u001B[34m";
+        final String ANSI_PURPLE = "\u001B[35m";
+        final String ANSI_CYAN = "\u001B[36m";
+        final String ANSI_WHITE = "\u001B[37m";
+        System.out.println(ANSI_RED + "\uD83E\uDDB7" + "BADER-CLINIC" + "\uD83E\uDDB7");
+        System.out.println(ANSI_PURPLE + "введите вашу Имя");
         String name = br.readLine();
-        System.out.println("какой ваша возрост");
+        System.out.println(ANSI_BLACK + "какой ваша возрост");
         int age = Integer.parseInt(br.readLine());
-        System.out.println("выбирайте врача ");
-
+        System.out.println(ANSI_PURPLE + "выбирайте врача ");
 
         Map<Integer, String> doctors = new HashMap<>();
         doctors.put(1, "Bader");
@@ -24,7 +33,7 @@ public class Main {
 
 
         for (Map.Entry<Integer, String> item : doctors.entrySet()) {
-            System.out.println(item.getKey()+"- " + item.getValue());
+            System.out.println(ANSI_BLUE + item.getKey() + "- " + item.getValue());
         }
         int D = Integer.parseInt(readDoctor(doctors));
 
@@ -33,11 +42,12 @@ public class Main {
         profession.put(2, "Surgery");
         profession.put(3, "Orthodontic");
         profession.put(4, "Pediatric");
-        System.out.println("Вы выбрали доктора " + doctors.get(D));
-        System.out.println("Профессия доктора: " + profession.get(D));
+        System.out.println("Вы выбрали доктора " + ANSI_RESET + doctors.get(D));
+        System.out.println("Профессия доктора: " + ANSI_CYAN + profession.get(D));
 
 
     }
+
     public static String readDoctor(Map<Integer, String> profession) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String D = null;
@@ -53,7 +63,5 @@ public class Main {
         }
         return D;
     }
-
 }
-
 
