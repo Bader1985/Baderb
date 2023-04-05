@@ -37,8 +37,12 @@ public class Main {
         profession.put(4, "Pediatric");
         System.out.println("Вы выбрали доктора " + ANSI_RESET + doctors.get(Doc));
         System.out.println("Профессия доктора: " + ANSI_CYAN + profession.get(Doc));
-        System.out.println("какие у вас Жалобы :");
-       int coplaint = Integer.parseInt(readcomplaint(doctors));
+        System.out.println("какие у вас Жалобы :" );
+
+       int m = Integer.parseInt(readcomplaint(Complaints()));
+        System.out.println("Вы выбрали:" + Complaints().get(m));
+        System.out.println("способ лечения:" + Treat().get(m));
+
 
 
     }
